@@ -1,22 +1,21 @@
-const selectionSort =  (arr) => {
+import exchange from './helpers';
 
-    if(!arr || arr.length === 0){
-        return;  
-     }
+const selectionSort = (arr) => {
 
-     for(let i= 0; i < arr.length ; i++)
-     {
-         let minIndex = i;
+    if (!arr || arr.length === 0) {
+        return;
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        let minIndex = i;
         let minsofar = arr[i];
 
-         for(let j= i; j < arr.length -1 ;j++)
-         {
-            if(arr[j+1] < arr[minIndex])
-            {
-                minIndex = j+1;
+        for (let j = i; j < arr.length - 1; j++) {
+            if (arr[j + 1] < arr[minIndex]) {
+                minIndex = j + 1;
             }
-         } 
-        exchange(arr, i , minIndex);
+        }
+        exchange(arr, i, minIndex);
 
     }
 
@@ -24,10 +23,5 @@ const selectionSort =  (arr) => {
 }
 
 
-const exchange = (arr, a, b) =>{
-    let temp = arr[a];
-    arr[a] = arr[b];
-    arr[b] = temp;
-}
 
 export default selectionSort;
