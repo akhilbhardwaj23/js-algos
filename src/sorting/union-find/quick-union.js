@@ -25,8 +25,11 @@ class QuickUnion {
 
     union = (i, j) => {
         //set the parent of j to i.
+        //set the root of i to root of j
+        const rootI = this.root(i);
+        const rootJ = this.root(j);
 
-        this.store[j] = this.store[i];
+        this.store[i] = rootJ;
     }
 }
 
