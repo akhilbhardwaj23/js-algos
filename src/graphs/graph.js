@@ -34,8 +34,8 @@ class Graph{
         return edges;
     }
 
-    adj = (v) =>{
-        return this.adj[v];
+    adjacents = (v) =>{
+        return this.adj[v] || [];
     }
 
     vertices = () => {
