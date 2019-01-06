@@ -23,7 +23,6 @@
      }
 
      delMax = () => {
-         console.log(this.items)
         //Find the max item in the queue
         let max = 0;
         for(let i=1; i < this.N; i++){
