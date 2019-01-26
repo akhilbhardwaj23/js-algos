@@ -10,17 +10,24 @@ const threeSum = (arr1, sum) => {
         let l = i + 1;
         let h = arr.length - 1;
 
+        let prevL = undefined;
+        let prevH = undefined;
+
         while (l < h) {
+          if (arr[l] === prevL && arr[h] === prevH) {
+              l++;
+              h--;
+              continue;
+          }
+
           let currSum = arr[l] + arr[h];
 
           if (currSum === newSum) {
             answer.push([arr[i], arr[l], arr[h]]);
-            l++; 
+            prevL = arr[l];
+            prevH = arr[h];
+            l++;
             h--;
-
-            /**Jump if equal */
-            while (l < h && arr[l] === arr[l + 1]) l++;
-            while (l < h && arr[h] === arr[h - 1]) h--;
           } else if (currSum < newSum) {
             l++;
             while (l < h && arr[l] === arr[l + 1]) l++;
